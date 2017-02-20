@@ -11,6 +11,12 @@ namespace ContactsList.Core
 		private IPersonService personService;
 		private IMyCamera myCamera;
 
+		public PersonViewModel(IPersonService personService, IMyCamera myCamera)
+		{
+			this.personService = personService;
+			this.myCamera = myCamera;
+		}
+
 		public Person SelectedPerson
 		{
 			get { return selectedPerson; }
@@ -31,7 +37,7 @@ namespace ContactsList.Core
 			}
 		}
 
-		public int Id
+		public int Id 
 		{
 			get { return id; }
 			set
@@ -59,12 +65,6 @@ namespace ContactsList.Core
 				imageName = value;
 				RaisePropertyChanged(() => ImageName);
 			}
-		}
-
-		public PersonViewModel(IPersonService personService, IMyCamera _myCam)
-		{
-			this.personService = personService;
-			myCamera = _myCam;
 		}
 
 		// this init func is used to provide data from other view: in this case the details of the person.
