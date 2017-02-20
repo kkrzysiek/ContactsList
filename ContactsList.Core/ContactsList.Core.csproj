@@ -33,6 +33,8 @@
     <Compile Include="Interfaces\IPersonService.cs" />
     <Compile Include="Interfaces\IMyCamera.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Repositories\PersonRepository.cs" />
+    <Compile Include="Services\PersonService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
