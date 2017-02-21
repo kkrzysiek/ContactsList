@@ -10,5 +10,10 @@ namespace ContactsList.Core
 		public string LastName { get; set; }
 
 		public string ImageName { get; set; }
+
+		public Person()
+		{
+			Id = -1;
+		}
 	}
 }

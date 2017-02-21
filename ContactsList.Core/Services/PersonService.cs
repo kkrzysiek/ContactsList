@@ -26,7 +26,7 @@ namespace ContactsList.Core
 				return;
 
 			// new person
-			if (person.Id == 0)
+			if (person.Id <= 0)
 			{
 				int highestId = personRepository.GetPersons().OrderByDescending(x => x.Id).First().Id;
 				person.Id = highestId + 1;

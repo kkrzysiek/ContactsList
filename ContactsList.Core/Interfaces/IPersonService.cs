@@ -8,6 +8,5 @@ namespace ContactsList.Core
 		void SavePerson(Person person);
 		Person GetByEmail(string email);
 		Person GetById(int id);
-
 	}
 }
