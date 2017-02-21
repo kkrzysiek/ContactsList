@@ -139,12 +139,21 @@
     <Compile Include="Setup.cs" />
     <Compile Include="CameraService.cs" />
     <Compile Include="CustomAlert.cs" />
+    <Compile Include="PersonTableViewCell.cs" />
+    <Compile Include="PathToUIImageConverterValueConverter.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="CustomCamera\MyCamera.cs" />
+    <Compile Include="CustomCamera\CameraImplementation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactsList.Core\ContactsList.Core.csproj">
       <Project>{6FF42C27-B56C-4EEE-85F0-1845797EC7AF}</Project>
       <Name>ContactsList.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\default.jpg" />
+    <BundleResource Include="Resources\kkrzysiek.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
