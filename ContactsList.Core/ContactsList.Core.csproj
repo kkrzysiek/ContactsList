@@ -39,6 +39,7 @@
     <Compile Include="AppStart.cs" />
     <Compile Include="ViewModels\PersonListViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="Interfaces\ICustomAlert.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />

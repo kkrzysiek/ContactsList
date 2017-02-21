@@ -10,11 +10,94 @@ namespace ContactsList.Core
 		private Person selectedPerson;
 		private IPersonService personService;
 		private IMyCamera myCamera;
+		private ICustomAlert customAlert;
 
-		public PersonViewModel(IPersonService personService, IMyCamera myCamera)
+		public PersonViewModel(IPersonService personService, IMyCamera _myCam, ICustomAlert alert)
 		{
 			this.personService = personService;
-			this.myCamera = myCamera;
+			myCamera = _myCam;
+			customAlert = alert;
+		}
+
+		// this init is used to provide from other view our own parameters: in this case the details of the person.
+		public void Init(int _id)
+		{
+			if (_id > 0)
+			{
+				selectedPerson = personService.GetById(_id);
+				firstName = selectedPerson.FirstName;
+				lastName = selectedPerson.LastName;
+				imageName = selectedPerson.ImageName;
+				id = selectedPerson.Id;
+			}
+			else
+			{
+				selectedPerson = new Person();
+			}
+		}
+
+		public override void Start()
+		{
+			base.Start();
+		}
+
+		public MvxCommand CloseCommand
+		{
+			get
+			{
+				return new MvxCommand(() =>
+					{
+						Close(this);
+					});
+			}
+		}
+
+		public MvxCommand AddCommand
+		{
+			get { return new MvxCommand(SavePerson); }
+		}
+
+		public MvxCommand TakePictureCommand
+		{
+			get { return new MvxCommand(TakePictureCtr); }
+		}
+
+		public MvxCommand ChoosePictureCommand
+		{
+			get { return new MvxCommand(ChoosePictureCtr); }
+		}
+
+		async void TakePictureCtr()
+		{
+			var picture = await myCamera.TakePicture();
+			if (picture != null)
+			{
+				ImageName = picture;
+			}
+		}
+
+		async void ChoosePictureCtr()
+		{
+			var picture = await myCamera.ChoosePicture();
+			if (picture != null)
+			{
+				ImageName = "saved.jpg";
+			}
+		}
+
+		void SavePerson()
+		{
+			if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
+			{
+				customAlert.DisplayAlert();
+				return;
+			}
+
+			var imgName = firstName[0] + lastName + ".jpg";
+			var name = myCamera.ChangePictureName(imgName);
+
+			personService.SavePerson(new Person { Id = id, FirstName = firstName, ImageName = name, LastName = lastName });
+			Close(this);
 		}
 
 		public Person SelectedPerson
@@ -37,7 +120,7 @@ namespace ContactsList.Core
 			}
 		}
 
-		public int Id 
+		public int Id
 		{
 			get { return id; }
 			set
@@ -64,66 +147,6 @@ namespace ContactsList.Core
 			{
 				imageName = value;
 				RaisePropertyChanged(() => ImageName);
-			}
-		}
-
-		// this init func is used to provide data from other view: in this case the details of the person.
-		public void Init(int _id)
-		{
-			if (_id > 0)
-			{
-				selectedPerson = personService.GetById(_id);
-				firstName = selectedPerson.FirstName;
-				lastName = selectedPerson.LastName;
-				id = selectedPerson.Id;
-			}
-			else
-			{
-				selectedPerson = new Person();
-				id = 0;
-			}
-		}
-
-		public override void Start()
-		{
-			base.Start();
-		}
-
-		void TakePictureCtr()
-		{
-			myCamera.ChoosePicture();
-		}
-
-		public MvxCommand CloseCommand
-		{
-			get
-			{
-				return new MvxCommand(() =>
-					{
-						Close(this);
-					});
-			}
-		}
-
-		public MvxCommand AddCommand
-		{
-			get
-			{
-				return new MvxCommand(SavePerson);
-			}
-		}
-
-		async void SavePerson()
-		{
-			personService.SavePerson(new Person { Id = id, FirstName = firstName, ImageName = imageName, LastName = lastName });
-			Close(this);
-		}
-
-		public MvxCommand TakePictureCommand
-		{
-			get
-			{
-				return new MvxCommand(TakePictureCtr);
 			}
 		}
 	}

@@ -6,5 +6,6 @@ namespace ContactsList.Core
 	{
 		Task<string> TakePicture();
 		Task<string> ChoosePicture();
+		string ChangePictureName(string newName);
 	}
 }

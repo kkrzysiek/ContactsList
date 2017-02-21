@@ -10,10 +10,7 @@ namespace ContactsList.Core
 
 		public ObservableCollection<Person> Persons
 		{
-			get
-			{
-				return persons;
-			}
+			get { return persons; } 
 			set
 			{
 				persons = value;
@@ -53,7 +50,7 @@ namespace ContactsList.Core
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<PersonViewModel>(new { _id = 0 }));
+				return new MvxCommand(() => ShowViewModel<PersonViewModel>(new { _id = -1 }));
 			}
 		}
 
