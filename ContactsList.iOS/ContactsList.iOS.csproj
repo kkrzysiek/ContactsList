@@ -122,6 +122,8 @@
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\" />
+    <Folder Include="CustomCamera\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -135,6 +137,8 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="CameraService.cs" />
+    <Compile Include="CustomAlert.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactsList.Core\ContactsList.Core.csproj">
