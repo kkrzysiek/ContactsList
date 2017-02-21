@@ -127,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Views\PersonListView.xib" />
+    <InterfaceDefinition Include="Views\PersonView.xib" />
+    <InterfaceDefinition Include="Views\PersonViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -144,6 +147,18 @@
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="CustomCamera\MyCamera.cs" />
     <Compile Include="CustomCamera\CameraImplementation.cs" />
+    <Compile Include="Views\PersonListView.cs" />
+    <Compile Include="Views\PersonListView.designer.cs">
+      <DependentUpon>PersonListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonView.cs" />
+    <Compile Include="Views\PersonView.designer.cs">
+      <DependentUpon>PersonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonViewCell.cs" />
+    <Compile Include="Views\PersonViewCell.designer.cs">
+      <DependentUpon>PersonViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactsList.Core\ContactsList.Core.csproj">
