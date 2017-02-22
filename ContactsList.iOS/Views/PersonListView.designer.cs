@@ -1,4 +1,4 @@
-// WARNING
+﻿// WARNING
 //
 // This file has been generated automatically by Xamarin Studio from the outlets and
 // actions declared in your storyboard file.
@@ -11,19 +11,11 @@ using UIKit;
 
 namespace ContactsList.iOS
 {
-    [Register ("PersonListView")]
-    partial class PersonListView
-    {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView savedPersonTableView { get; set; }
-
-        void ReleaseDesignerOutlets ()
-        {
-            if (savedPersonTableView != null) {
-                savedPersonTableView.Dispose ();
-                savedPersonTableView = null;
-            }
-        }
-    }
+	[Register("PersonListView")]
+	partial class PersonListView
+	{
+		void ReleaseDesignerOutlets()
+		{
+		}
+	}
 }
