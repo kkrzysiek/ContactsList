@@ -8,21 +8,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonView">
             <connections>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
-                <outlet property="personImageView" destination="5" id="name-outlet-5"/>
+                                <outlet property="personImageView" destination="5" id="name-outlet-5"/>
                 <outlet property="btnTakePicture" destination="6" id="name-outlet-6"/>
                 <outlet property="btnChoosePicture" destination="7" id="name-outlet-7"/>
                 <outlet property="txtFirstName" destination="10" id="name-outlet-10"/>
                 <outlet property="txtLastName" destination="11" id="name-outlet-11"/>
                 <outlet property="btnSave" destination="8" id="name-outlet-8"/>
                 <outlet property="btnCancel" destination="9" id="name-outlet-9"/>
+
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2" restorationIdentifier="PersonView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <subviews>
+                  <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5" translatesAutoresizingMaskIntoConstraints="NO">
                     <rect key="frame" x="20" y="55" width="150" height="150"/>
                     <constraints>
@@ -225,6 +226,9 @@
                 <constraint id="31" firstItem="9" firstAttribute="leading" secondItem="8" secondAttribute="trailing" constant="114"/>
                 <constraint id="33" firstItem="9" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="26"/>
             </constraints>
+
+      
+      
         </view>
     </objects>
     <resources>
