@@ -142,7 +142,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="CameraService.cs" />
     <Compile Include="CustomAlert.cs" />
-    <Compile Include="PersonTableViewCell.cs" />
+    <Compile Include="PersonTableViewSource.cs" />
     <Compile Include="PathToUIImageConverterValueConverter.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="CustomCamera\MyCamera.cs" />

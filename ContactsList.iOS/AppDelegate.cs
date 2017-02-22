@@ -1,4 +1,8 @@
 ﻿using Foundation;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.iOS.Platform;
+using MvvmCross.Platform;
+using ContactsList.iOS;
 using UIKit;
 
 namespace ContactsList.iOS

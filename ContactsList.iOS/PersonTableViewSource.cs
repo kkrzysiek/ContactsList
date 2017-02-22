@@ -4,9 +4,11 @@ using MvvmCross.Binding.iOS.Views;
 using UIKit;
 using Foundation;
 
+
+
 namespace ContactsList.iOS
 {
-	public class PersonTableViewCell: MvxTableViewSource
+	public class PersonTableViewSource: MvxTableViewSource
 	{
 		public PersonTableViewSource(UITableView tableView) : base(tableView)
 		{

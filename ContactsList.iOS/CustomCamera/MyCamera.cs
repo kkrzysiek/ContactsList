@@ -8,7 +8,7 @@ using ContactsList.iOS;
 using UIKit;
 namespace ContactsList.iOS
 {
-	public class MyCameraIMyCamera
+	public class MyCamera:IMyCamera
 	{
 		public Task<string> ChoosePicture()
 		{
