@@ -13,7 +13,7 @@ namespace ContactsList.Core
 
 		public List<Person> GetAllPersons()
 		{
-			var persons = personRepository.GetPersons().ToList();
+			List<Person> persons = personRepository.GetPersons().ToList();
 			if (persons == null || persons.Count() <= 0)
 				return new List<Person>();
 
@@ -35,7 +35,7 @@ namespace ContactsList.Core
 			}
 
 			// existing record
-			var p = personRepository.GetPersons().First(x => x.Id == person.Id);
+			Person p = personRepository.GetPersons().First(x => x.Id == person.Id);
 			if (p != null)
 			{
 				personRepository.Update(person);
@@ -45,7 +45,7 @@ namespace ContactsList.Core
 
 		public Person GetById(int id)
 		{
-			var person = personRepository.GetPersons().FirstOrDefault(x => x.Id == id);
+			Person person = personRepository.GetPersons().FirstOrDefault(x => x.Id == id);
 			if (person == null)
 				return new Person();
 			return person;
@@ -54,7 +54,7 @@ namespace ContactsList.Core
 
 		public Person GetByEmail(string email)
 		{
-			var person = personRepository.GetPersons().FirstOrDefault(x => x.ImageName.ToLower() == email.ToLower());
+			Person person = personRepository.GetPersons().FirstOrDefault(x => x.ImageName.ToLower() == email.ToLower());
 			if (person == null)
 				return new Person();
 			return person;
