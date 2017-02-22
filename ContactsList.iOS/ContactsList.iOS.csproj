@@ -140,7 +140,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="CameraService.cs" />
     <Compile Include="CustomAlert.cs" />
     <Compile Include="PersonTableViewSource.cs" />
     <Compile Include="PathToUIImageConverterValueConverter.cs" />
